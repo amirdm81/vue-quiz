@@ -1,4 +1,9 @@
 import { createApp } from 'vue'
-import App from './App.vue'
+import api from './api';
+import App from './App.vue';
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+app.config.globalProperties.$api = api;
+
+app.mount('#app');

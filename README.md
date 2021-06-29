@@ -1,24 +1,26 @@
 # vue-quiz
 
+## Folder structure
+```
+src/
+├── api/
+│   ├── index.js
+│   ├── client.js
+│   ├── todos.js
+├── components/
+│   ├── Header/
+│   ├── Item/
+├── App.vue
+├── main.js
+```
+
 ## Project setup
+
 ```
-yarn install
+yarn && yarn serve
 ```
 
-### Compiles and hot-reloads for development
-```
-yarn dev
-```
+## Tips
 
-### Compiles and minifies for production
-```
-yarn build
-```
 
-### Lints and fixes files
-```
-yarn lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
