@@ -1,20 +1,22 @@
 <template>
   <div class="app">
-    <h1>Hello Dear Friend! \ (•◡•) /</h1>
+    <Header />
+    <items />
   </div>
 </template>
 
 <script>
+import Header from "@/components/Header/Header.vue";
+import Items from "@/components/Items/Items.vue";
+
 export default {
-  name: 'App',
-  created() {
-    console.log(this.$api);
-  }
-}
+  components: { Header, Items },
+  name: "App",
+};
 </script>
 
-<style scoped>
-  .app {
-    text-align: center;
-  }
+<style>
+body {
+  font-family: "Roboto", sans-serif !important;
+}
 </style>
