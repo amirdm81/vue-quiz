@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <button
-      v-if="(!searched || searched?.length < 1) && search"
+      v-if="searched?.length < 1 && search"
       class="add-btn"
       @click="createNewData"
     >
