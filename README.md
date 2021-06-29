@@ -1,15 +1,19 @@
 # vue-quiz
 
 ## Folder structure
+
 ```
 src/
 ├── api/
 │   ├── index.js
 │   ├── client.js
-│   ├── todos.js
+│   ├── client.js
+├── assets/
 ├── components/
 │   ├── Header/
+│   ├── Items/
 │   ├── Item/
+│   ├── Modal/
 ├── App.vue
 ├── main.js
 ```
@@ -17,10 +21,7 @@ src/
 ## Project setup
 
 ```
-yarn && yarn serve
+yarn && yarn dev
 ```
 
 ## Tips
-
-
-
