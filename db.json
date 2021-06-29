@@ -2,6 +2,60 @@
   "data": [
     {
       "title": {
+        "text": "Build"
+      },
+      "description": "lorem ipsum dolor sit amet",
+      "img": "https://source.unsplash.com/random",
+      "color": "#ec5858",
+      "id": 1
+    },
+    {
+      "title": {
+        "text": "your"
+      },
+      "description": "lorem ipsum dolor sit amet",
+      "img": "https://source.unsplash.com/random",
+      "color": "#9ad3bc",
+      "id": 2
+    },
+    {
+      "title": {
+        "text": "weaknesses"
+      },
+      "description": "lorem ipsum dolor sit amet",
+      "img": "https://source.unsplash.com/random",
+      "color": "#16a596",
+      "id": 3
+    },
+    {
+      "title": {
+        "text": "until"
+      },
+      "description": "lorem ipsum dolor sit amet",
+      "img": "https://source.unsplash.com/random",
+      "color": "#b8de6f",
+      "id": 4
+    },
+    {
+      "title": {
+        "text": "they"
+      },
+      "description": "lorem ipsum dolor sit amet",
+      "img": "https://source.unsplash.com/random",
+      "color": "#2d6187",
+      "id": 5
+    },
+    {
+      "title": {
+        "text": "become"
+      },
+      "description": "lorem ipsum dolor sit amet",
+      "img": "https://source.unsplash.com/random",
+      "color": "#28df99",
+      "id": 6
+    },
+    {
+      "title": {
         "text": "your"
       },
       "description": "lorem ipsum dolor sit amet",
@@ -19,49 +73,31 @@
       "id": 8
     },
     {
-      "id": 13,
+      "title": {
+        "text": "points"
+      },
       "description": "lorem ipsum dolor sit amet",
       "img": "https://source.unsplash.com/random",
-      "color": "#43b894",
-      "title": {
-        "text": "amir reza"
-      }
+      "color": "#00334e",
+      "id": 9
     },
     {
-      "id": 14,
       "description": "lorem ipsum dolor sit amet",
       "img": "https://source.unsplash.com/random",
-      "color": "#533cef",
+      "color": "#f08feb",
       "title": {
-        "text": "build"
-      }
+        "text": "building"
+      },
+      "id": 10
     },
     {
-      "id": 15,
       "description": "lorem ipsum dolor sit amet",
       "img": "https://source.unsplash.com/random",
-      "color": "#ccf0da",
+      "color": "#e48111",
       "title": {
-        "text": "test"
-      }
-    },
-    {
-      "id": 16,
-      "description": "lorem ipsum dolor sit amet",
-      "img": "https://source.unsplash.com/random",
-      "color": "#43ffb5",
-      "title": {
-        "text": "hi"
-      }
-    },
-    {
-      "id": 17,
-      "description": "lorem ipsum dolor sit amet",
-      "img": "https://source.unsplash.com/random",
-      "color": "#21c4a9",
-      "title": {
-        "text": "hello"
-      }
+        "text": "builded"
+      },
+      "id": 11
     }
   ]
 }

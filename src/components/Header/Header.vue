@@ -1,5 +1,12 @@
 <template>
   <div class="header">
+    <button
+      v-if="(!searched || searched?.length < 1) && search"
+      class="add-btn"
+      @click="createNewData"
+    >
+      +
+    </button>
     <div class="search">
       <button class="search-btn" @click="handleSearch">
         <svg
@@ -15,7 +22,12 @@
         </svg>
       </button>
       <div class="input-bar">
-        <input class="search-input" :value="search" @input="handleWait" />
+        <input
+          class="search-input"
+          placeholder="Search something..."
+          :value="search"
+          @input="handleWait"
+        />
         <div class="progress-bar" :style="{ width: `${progress}%` }" />
       </div>
     </div>
@@ -27,6 +39,14 @@ let timer;
 let progressTimer;
 
 export default {
+  props: {
+    lastItem: {
+      type: Array,
+    },
+    searched: {
+      type: Array,
+    },
+  },
   data: () => ({
     progress: 0,
     search: "",
@@ -80,6 +100,27 @@ export default {
       clearTimeout(timer);
       progressTimer = null;
       timer = null;
+    },
+    createNewData() {
+      const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+
+      this.$api.data
+        .create({
+          // id: this.lastItem.id + 1,
+          description: this.lastItem.description,
+          img: this.lastItem.img,
+          color: `#${randomColor}`,
+          title: { text: this.search },
+        })
+        .then(({ data }) => {
+          console.log(data);
+          this.$emit("add-item", data);
+          this.search = null;
+        })
+        .catch((e) => {
+          console.log(e);
+          // alert("error in create new data");
+        });
     },
   },
 };

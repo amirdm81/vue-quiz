@@ -2,7 +2,6 @@
   <div class="container">
     <div v-if="searched && searched.length < 1" class="no-result">
       <p>No results found</p>
-      <button @click="createNewData">+ create new data</button>
     </div>
     <div v-else>
       <Item
@@ -27,58 +26,13 @@ export default {
     search: {
       type: String,
     },
-  },
-  data: () => ({
-    items: [],
-    lastItem: {},
-  }),
-  created() {
-    this.getItems();
+    items: {
+      type: Array,
+    },
   },
   methods: {
-    getItems() {
-      this.$api.data
-        .list()
-        .then(({ data }) => {
-          this.items = data;
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-    },
-    createNewData() {
-      const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-
-      this.$api.data
-        .create({
-          id: this.lastItem.id + 1,
-          description: this.lastItem.description,
-          img: this.lastItem.img,
-          color: `#${randomColor}`,
-          title: { text: this.search },
-        })
-        .then(({ data }) => {
-          this.$emit("clear-searched");
-          // alert("new data created successfully");
-          this.items.push(data);
-        })
-        .catch((e) => {
-          console.log(e);
-          // alert("error in create new data");
-        });
-    },
     handleRemove(id) {
-      this.items = this.items.filter((i) => i.id !== id);
-    },
-  },
-  watch: {
-    searched() {
-      if (this.searched) {
-        this.lastItem = this.items[this.items.length - 1];
-        this.items = this.searched;
-      } else {
-        this.getItems();
-      }
+      this.$emit("remove-item", id);
     },
   },
 };
