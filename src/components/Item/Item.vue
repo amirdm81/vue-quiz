@@ -11,14 +11,24 @@
         </div>
       </div>
 
-      <div class="item-left"></div>
+      <div class="item-left">
+        <modal v-model:active="deleteModal" @click-delete="handleDelete">
+          <h1>Delete item</h1>
+          <p>are you sure to delete this item ?</p>
+        </modal>
+        <button @click="deleteModal = true" class="item-delete-btn">
+          <img :src="require('@/assets/trash-can.svg')" class="item-delete" />
+        </button>
+      </div>
     </div>
     <div class="item-bottom" :style="{ background: color }"></div>
   </div>
 </template>
 
 <script>
+import Modal from "../Modal/Modal.vue";
 export default {
+  components: { Modal },
   props: {
     title: {
       text: {
@@ -37,6 +47,28 @@ export default {
     img: {
       type: String,
       require: true,
+    },
+    id: {
+      type: Number,
+      require: true,
+    },
+  },
+  data: () => ({
+    deleteModal: false,
+  }),
+  methods: {
+    handleDelete() {
+      this.$api.data
+        .delete(this.id)
+        .then(() => {
+          this.deleteModal = false;
+          this.$emit("remove-item", this.id);
+          // alert("item successfully deleted");
+        })
+        .catch((e) => {
+          console.log(e);
+          // alert("error in delete item");
+        });
     },
   },
 };
@@ -68,6 +100,10 @@ export default {
   align-items: flex-end;
 }
 
+.item-left {
+  align-self: flex-end;
+}
+
 .item-title {
   font-size: 1.5rem;
   margin: 0;
@@ -94,5 +130,15 @@ export default {
 .item-bottom {
   border-radius: 0.8rem;
   height: 0.5rem;
+}
+
+.item-delete {
+  height: 1.7rem;
+  width: 1.7rem;
+}
+
+.item-delete-btn {
+  background: none;
+  border: none;
 }
 </style>
